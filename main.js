@@ -1,3 +1,4 @@
+//intiating the consts for the script
 const problemElement = document.querySelector(".problem")
 const ourForm = document.querySelector(".our-form")
 const ourField = document.querySelector(".our-field")
@@ -7,11 +8,13 @@ const progressBar = document.querySelector(".progress-inner")
 const endMessage = document.querySelector(".end-message")
 const resetButton = document.querySelector(".reset-button")
 
+//setting the score state
 let state = {
   score: 0,
   wrongAnswers: 0
 }
 
+//to create the question given to the user
 function updateProblem() {
   state.currentProblem = generateProblem()
   problemElement.innerHTML = `${state.currentProblem.numberOne} ${state.currentProblem.operator} ${state.currentProblem.numberTwo}`
@@ -19,12 +22,14 @@ function updateProblem() {
   ourField.focus()
 }
 
+//creating an update to the question 
 updateProblem()
 
 function generateNumber(max) {
   return Math.floor(Math.random() * (max + 1))
 }
 
+//create the question by generating numbers between 0 and 10
 function generateProblem() {
   return {
     numberOne: generateNumber(10),
@@ -38,6 +43,7 @@ ourForm.addEventListener("submit", handleSubmit)
 function handleSubmit(e) {
   e.preventDefault()
 
+    //checking if the answer is correct or not
   let correctAnswer
   const p = state.currentProblem
   if (p.operator == "+") correctAnswer = p.numberOne + p.numberTwo
@@ -59,14 +65,14 @@ function handleSubmit(e) {
 }
 
 function checkLogic() {
-  // if you won
+  // if you win
   if (state.score === 10) {
     endMessage.textContent = "Congrats! You won."
     document.body.classList.add("overlay-is-open")
     setTimeout(() => resetButton.focus(), 331)
   }
 
-  // if you lost
+  // if you lose
   if (state.wrongAnswers === 3) {
     endMessage.textContent = "Sorry! You lost."
     document.body.classList.add("overlay-is-open")
@@ -76,6 +82,7 @@ function checkLogic() {
 
 resetButton.addEventListener("click", resetGame)
 
+//creating a input to start the game again
 function resetGame() {
   document.body.classList.remove("overlay-is-open")
   updateProblem()
