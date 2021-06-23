@@ -4,17 +4,25 @@ body {
   color: #333;
 }
 
-.main-ui {
+h1{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+}
+
+.main {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.our-form {
+.form {
   display: flex;
   justify-content: center;
 }
 
-.status {
+.check {
   text-align: center;
   font-size: .85rem;
 }
@@ -24,13 +32,13 @@ body {
   width: 100%;
 }
 
-.progress {
+.progressbar {
   border: 1px solid #c7c7c7;
   border-right: none;
   position: relative;
 }
 
-.progress-inner {
+.progressbarinside {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -42,7 +50,7 @@ body {
   transition: transform .4s ease-out;
 }
 
-.box {
+.progressbox {
   height: 40px;
   border-right: 1px solid #c7c7c7;
   flex: 1;
@@ -64,7 +72,7 @@ body {
   transform: scale(1.2);
 }
 
-.overlay-inner {
+.overlayinside {
   text-align: center;
   max-width: 700px;
 }
@@ -93,7 +101,7 @@ body.overlay-is-open .main-ui,
   }
 }
 
-.animate-wrong {
+.incorrectanimation{
   animation: .45s showError;
 }
 
@@ -103,12 +111,12 @@ body.overlay-is-open .main-ui,
   text-align: center;
 }
 
-.end-message {
+.outcome {
   font-size: 1.5rem;
   margin-top: 0;
 }
 
-.reset-button {
+.resetbutton {
   font-size: 1.2rem;
   background-color: #004094;
   border: none;
@@ -120,10 +128,10 @@ body.overlay-is-open .main-ui,
   cursor: pointer;
 }
 
-.reset-button:hover {
+.reset:hover {
   background-color: #00367e;
 }
 
-.reset-button:focus {
+.reset:focus {
   background-color: #00275a;
 }

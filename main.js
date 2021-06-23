@@ -1,12 +1,12 @@
 //intiating the consts for the script
-const problemElement = document.querySelector(".problem")
-const ourForm = document.querySelector(".our-form")
-const ourField = document.querySelector(".our-field")
-const pointsNeeded = document.querySelector(".points-needed")
-const mistakesAllowed = document.querySelector(".mistakes-allowed")
-const progressBar = document.querySelector(".progress-inner")
-const endMessage = document.querySelector(".end-message")
-const resetButton = document.querySelector(".reset-button")
+const problem= document.querySelector(".problem")
+const form = document.querySelector(".form")
+const inputBox = document.querySelector(".field")
+const pointsRequired = document.querySelector(".pointsrequired")
+const mistakesAllowed = document.querySelector(".mistakesallowed")
+const progressBar = document.querySelector(".progressinside")
+const outcome = document.querySelector(".outcome")
+const reset = document.querySelector(".reset")
 
 //setting the score state
 let state = {
@@ -15,11 +15,11 @@ let state = {
 }
 
 //to create the question given to the user
-function updateProblem() {
-  state.currentProblem = generateProblem()
-  problemElement.innerHTML = `${state.currentProblem.numberOne} ${state.currentProblem.operator} ${state.currentProblem.numberTwo}`
-  ourField.value = ""
-  ourField.focus()
+function updateQuestion() {
+  state.currentQuestion = generateQuestion()
+  problemElement.innerHTML = `${state.currentQuestion.numberOne} ${state.currentQuestion.operator} ${state.currentQuestion.numberTwo}`
+  inputBox.value = ""
+  inputBox.focus()
 }
 
 //creating an update to the question 
@@ -30,7 +30,7 @@ function generateNumber(max) {
 }
 
 //create the question by generating numbers between 0 and 10
-function generateProblem() {
+function generateQuestion() {
   return {
     numberOne: generateNumber(10),
     numberTwo: generateNumber(10),
@@ -45,7 +45,7 @@ function handleSubmit(e) {
 
     //checking if the answer is correct or not
   let correctAnswer
-  const p = state.currentProblem
+  const p = state.currentQuestion
   if (p.operator == "+") correctAnswer = p.numberOne + p.numberTwo
   if (p.operator == "-") correctAnswer = p.numberOne - p.numberTwo
   if (p.operator == "x") correctAnswer = p.numberOne * p.numberTwo

@@ -2,44 +2,49 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewpoint" content="width+device-width, initial-scale=1.0">
-	<title>Math quiz game</title>
+	<title>Math Quiz</title>
 	<link rel="stylesheet" href="main.css">
+    <h1>Math Quiz</h1>
 </head>
 		<body>
-         <div class="main-ui">
+         <div class="main">
             <p class="problem"></p>
 
-  <form action="" class="our-form">
-    <input type="text" class="our-field" autocomplete="off">
+  <form action="" class="form">
+    <input type="text" class="field" autocomplete="off">
     <button>Submit</button>
   </form>
 
-  <p class="status">You need <span class="points-needed">10</span> more points, and are allowed to make <span class="mistakes-allowed">2</span> more mistakes.</p>
+  <p class="status">You need <span class="pointsrequired">10</span> more points, and are allowed to make <span class="mistakes-allowed">2</span> more mistakes.</p>
 
-  <div class="progress">
+  <div class="progressbar">
     <div class="boxes">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
+      <div class="progressbox"></div>
     </div>
-    <div class="progress-inner"></div>
+    <div class="progressbarinside"></div>
   </div>
 
 </div>
 
 <div class="overlay">
-  <div class="overlay-inner">
-    <p class="end-message"></p>
-    <button class="reset-button">Start Over</button>
+  <div class="overlayinside">
+    <p class="outcome"></p>
+    <button class="reset">Start Over</button>
   </div>
 </div>
+            <h2> How to Play</h2>
+            <p>To play this game you will need a mouse and keyboard to be able to input your answers,
+            answer the questions correctly to gain points across the progress bar. You have 3 attempts for all 10 questions 
+            that you will need to answer. You can choose to use the enter button to input your answer or click the sumbit button </p>
     </body>
     
 </html>
